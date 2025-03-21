@@ -25,7 +25,8 @@ A **mathematical model** represents a system’s behavior using **differential e
 
 It is difficult to model a system represented by differential equations --> So need for **Laplace transformation.**
 
-![The laplace transform is defined as](pictureAssets/Screenshot 2025-03-21 at 13.10.24.png)
+![The Laplace transform is defined as](pictureAssets/Screenshot_2025-03-21_at_13.10.24.png)
+
 
 
 The **transfer function** \( G(s) \) describes the system’s input-output relationship in the **Laplace domain**.
