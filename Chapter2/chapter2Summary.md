@@ -25,7 +25,10 @@ A **mathematical model** represents a system’s behavior using **differential e
 
 It is difficult to model a system represented by differential equations --> So need for **Laplace transformation.**
 
-![The Laplace transform is defined as]("pictureAssets/Screenshot 2025-03-21 at 13.10.24.png")
+The Laplace transform of a function \( f(t) \) is defined as:
+
+$$\mathcal{L}\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) \, dt$$
+
 
 
 
