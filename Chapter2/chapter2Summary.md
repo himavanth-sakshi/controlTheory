@@ -132,9 +132,9 @@ The variables in the electrical circuits (e.g., current, voltage) map directly t
 - Based on mesh (loop) equations in electric circuits.
 - Mechanical elements correspond to electrical elements as follows:
 
-Mass M → Inductor L
-Damping f_v → Resistor R
-Spring K → Capacitor C
+- Mass M → Inductor L
+- Damping f_v → Resistor R
+- Spring K → Capacitor C
 
 Mechanical equation of motion
 $$(Ms^2 + f_v s + K)X(s) = F(s)$$
@@ -146,6 +146,15 @@ $$(Ms + f_v + \frac{K}{s})V(s) = F(s)$$
 Electrical Series RLC Mesh Equation:
 
 $$(Ls + R + \frac{1}{Cs})I(s) = E(s)$$
+
+2. Parallel Analog (Admittance Approach)
+- Based on nodal equations in electric circuits.
+- Components are matched using admittance (inverse of impedance).
+
+Electrical Parallel RLC Nodal Equation:
+
+$$((C_s + \frac{1}{s} + \frac{1}{L_s}) E(s) = I(s))$$ 
+This analogy allows us to represent mechanical systems as parallel electrical networks by mapping motion to node voltages and forces to currents.
 
 ## 2.10 NonLineraties 
 The models developed so far assume linear, time-invariant differential equations, but many real-world systems are nonlinear. 
