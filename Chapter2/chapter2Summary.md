@@ -154,12 +154,26 @@ Step 5: Take the Laplace transform, assuming zero initial conditions.
 Step 6: Express the system as a transfer function.
 
 ### 2.11.3 Mathematical Linearization (Using Taylor Series Approximation):
-- the functionf(x) around point x0 is approximated as:
+- the functionf(x) around point x_0 is approximated as:
 $$f(x) \approx f(x_0) + \frac{df}{dx} \Big|_{x = x_0} (x - x_0)$$
 
-$$ \text{Higher-order terms } \left( \frac{d^2f}{dx^2}, \frac{d^3f}{dx^3}, \ldots \right) \text{ are ignored for small variations.} $$
+- $$ \text{Higher-order terms } \left( \frac{d^2f}{dx^2}, \frac{d^3f}{dx^3}, \ldots \right) \text{ are ignored for small variations.} $$
 
+### 2.11.4 Example of Linearization of pendulum equation
 
+The equation of motion for a pendulum is:
+
+$$M L^2 \ddot{\theta} + B \dot{\theta} + M g L \sin{\theta} = 0$$
+
+For small angles (\( \theta \approx 0 \)), we approximate:
+
+$$\sin{\theta} \approx \theta$$
+
+The linearized equation becomes:
+
+$$M L^2 \ddot{\theta} + B \dot{\theta} + M g L \theta = 0$$
+
+This is now a linear system that can be analyzed using transfer functions.
 
 
 
