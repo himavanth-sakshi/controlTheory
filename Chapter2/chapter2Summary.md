@@ -139,6 +139,31 @@ Input = 3 (sum of 1 & 2) → Output = 1.5 (sum of 0.5 & 1)
 - If input variations are small, a linear relationship can be assumed around a specific point.
 - Example: Electronic amplifiers are approximately linear for small input changes.
 ---
+## 2.11 Linearization
+
+### 2.11.1 **Why Linearization is Needed?**
+Many electrical and mechanical systems contain nonlinear components.
+Transfer functions only apply to linear systems, so we must linearize nonlinear systems first.
+
+### 2.11.2 Linearization Process:
+Step 1: Identify the nonlinear component and write the nonlinear differential equation.
+Step 2: Determine the steady-state equilibrium point where small-signal input = 0.
+Step 3: Use Taylor Series Expansion to approximate the nonlinear function.
+Step 4: Neglect higher-order terms to get a linear equation.
+Step 5: Take the Laplace transform, assuming zero initial conditions.
+Step 6: Express the system as a transfer function.
+
+### 2.11.3 Mathematical Linearization (Using Taylor Series Approximation):
+- the functionf(x) around point x0 is approximated as:
+$$f(x) \approx f(x_0) + \frac{df}{dx} \Big|_{x = x_0} (x - x_0)$$
+
+$$ \text{Higher-order terms } \left( \frac{d^2f}{dx^2}, \frac{d^3f}{dx^3}, \ldots \right) \text{ are ignored for small variations.} $$
+
+
+
+
+
+
 ## Key Takeaways
 - **Mathematical modeling** helps analyze system behavior.
 - **Transfer functions** describe system dynamics in the **Laplace domain**.
