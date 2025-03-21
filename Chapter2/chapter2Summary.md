@@ -115,6 +115,38 @@ Example for a **mass-spring-damper** system:
 \[ A = \begin{bmatrix} 0 & 1 \\ -\frac{K}{M} & -\frac{B}{M} \end{bmatrix}, \quad B = \begin{bmatrix} 0 \\ \frac{1}{M} \end{bmatrix}, \quad C = \begin{bmatrix} 1 & 0 \end{bmatrix}, \quad D = 0 \]
 
 ---
+## 2.9 Electric Circuit Analogs
+This section explains how mechanical systems can be represented by equivalent electrical circuits, highlighting the deep mathematical similarity between them. This approach helps simplify problem-solving by converting mechanical motion problems into electrical network problems.
+
+**Electrical Circuit Analog:**
+An electric circuit analog is an electrical network whose equations behave like those of a mechanical system.
+This is based on the mathematical similarity between Kirchhoff's laws (for electrical systems) and Newton's laws (for mechanical systems).
+
+**Why Use Analogs?**
+Translating mechanical problems into electric circuit equivalents can simplify modeling and analysis.
+The variables in the electrical circuits (e.g., current, voltage) map directly to mechanical variables (e.g., velocity, force).
+
+### 2.9.1 Types of Analogs
+
+1. Series Analog (Impedance Approach):
+- Based on mesh (loop) equations in electric circuits.
+- Mechanical elements correspond to electrical elements as follows:
+
+Mass M → Inductor L
+Damping f_v → Resistor R
+Spring K → Capacitor C
+
+Mechanical equation of motion
+$$(Ms^2 + f_v s + K)X(s) = F(s)$$
+
+After converting displacement X(s) to velocity V(s):
+
+$$(Ms + f_v + \frac{K}{s})V(s) = F(s)$$
+
+Electrical Series RLC Mesh Equation:
+
+$$(Ls + R + \frac{1}{Cs})I(s) = E(s)$$
+
 ## 2.10 NonLineraties 
 The models developed so far assume linear, time-invariant differential equations, but many real-world systems are nonlinear. 
 
