@@ -23,13 +23,11 @@ A **control system** manages, commands, directs, or regulates the behavior of ot
 - Example: Thermostat-controlled heating
 
 ### Feedback Equation:
-$$
-T(s) = \frac{G(s)}{1 + G(s)H(s)}
-$$
-Where:
-- \( G(s) \): Forward path transfer function
-- \( H(s) \): Feedback path transfer function
+T(s) = G(s) / (1 + G(s)H(s))
 
+Where:
+- G(s): Forward path transfer function
+- H(s): Feedback path transfer function
 ---
 
 ## 1.3 Components of a Control System
