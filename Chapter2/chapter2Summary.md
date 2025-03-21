@@ -115,7 +115,30 @@ Example for a **mass-spring-damper** system:
 \[ A = \begin{bmatrix} 0 & 1 \\ -\frac{K}{M} & -\frac{B}{M} \end{bmatrix}, \quad B = \begin{bmatrix} 0 \\ \frac{1}{M} \end{bmatrix}, \quad C = \begin{bmatrix} 1 & 0 \end{bmatrix}, \quad D = 0 \]
 
 ---
+## 2.10 NonLineraties 
+The models developed so far assume linear, time-invariant differential equations, but many real-world systems are nonlinear. 
 
+### 2.10.1 **Definition of Linearity:** A system is linear if it satisfies:
+- Superposition: The response to multiple inputs is the sum of individual responses.
+- Homogeneity: Scaling an input scales the output by the same factor.
+
+### 2.10.2 **Examples of Nonlinear Systems:**
+If an input x results in an output 0.5x , then:
+Input = 1 → Output = 0.5
+Input = 2 → Output = 1
+Input = 3 (sum of 1 & 2) → Output = 1.5 (sum of 0.5 & 1)
+
+### 2.10.3 **Example of a Linear System:**
+- Saturation: Electronic amplifiers behave linearly only within a specific range.
+- Dead Zone: Motors may not respond at low voltages due to friction.
+- Backlash: Gears may have loose movement, causing an input delay.
+- Phase Detector: Output is the sine of the input, making it inherently nonlinear.
+
+### 2.10.4 **Linear Approximations of Nonlinear Systems:**
+- Nonlinear systems can often be approximated as linear for analysis.
+- If input variations are small, a linear relationship can be assumed around a specific point.
+- Example: Electronic amplifiers are approximately linear for small input changes.
+---
 ## Key Takeaways
 - **Mathematical modeling** helps analyze system behavior.
 - **Transfer functions** describe system dynamics in the **Laplace domain**.
