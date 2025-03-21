@@ -1,9 +1,57 @@
 # Chapter 4: Time Response
 
-## Overview
+## 4.1 Overview
 Chapter 4 focuses on analyzing the **time-domain response** of control systems. It introduces how systems behave over time when subjected to standard inputs (step, impulse, ramp), and how performance metrics such as **rise time**, **settling time**, and **overshoot** are used to evaluate system performance.
 
 ---
+## 4.2 Poles, Zeros and System Response
+
+The output of a system is sum of two responses
+- Forced response (due to external inputs)
+- Natural response (due to the system’s inherent dynamics)
+
+While solving differential equations or taking inverse Laplace transforms can give accurate results, these methods are often time-consuming. Instead, engineers use qualitative techniques—like pole-zero analysis—for faster insight into system behavior.
+
+## 4.2.1 **Poles of a Transfer Functions**
+Poles are fundamental in understanding how a system behaves over time. They determine the stability, speed of response, and oscillatory nature of the system.
+
+A pole of a transfer function is:
+- A value of the Laplace variable s that makes the denominator of the transfer function zero, causing the function to go to infinity.
+if $$G(s) = /frac{N(s)}{D(s)}$$ , then poles are the roots of D(s) = 0
+- In practical control system analysis, poles also include common roots with the numerator (even if they cancel out), because they still influence the system behavior.
+
+**Interpretation of Poles**
+- Poles on the left-half of the s-plane → Stable system
+- Poles on the right-half of the s-plane → Unstable system
+- Poles on the imaginary axis → Marginally stable (e.g., pure oscillation)
+
+**Effect of Poles on System Response**
+- Real negative poles: Exponential decay (stable, slow or fast depending on magnitude)
+- Complex conjugate poles: Oscillatory response
+- Poles closer to origin: Slower response
+- Poles farther left: Faster response
+- Repeated poles: Slower settling time and can increase overshoot
+
+## 4.2.2 **Zeros of a Transfer Functions**
+Zeros play a key role in shaping how the input signal influences the output of a system. While poles govern the system’s inherent behavior (natural response), zeros affect the forced response and the shape of the output.
+
+A zero of a transfer function is:
+- A value of the Laplace variable s that makes the numerator of the transfer function equal to zero, causing the overall transfer function output to be zero.
+- if $$G(s) = /frac{N(s)}{D(s)}$$ , then poles are the roots of D(s) = 0, then zeros are the roots of N(s)=0
+- In practice, even if a zero cancels with a matching pole in the denominator, it's still often considered a zero, since it can still impact system behavior.
+
+**Impact of Zeros on System Response**
+- Zeros shape the output by affecting amplitude and response time.
+- Real negative zeros can reduce overshoot and settle the response faster.
+- Right-half-plane zeros (positive real) cause non-minimum phase behavior, leading to:
+  - Initial output movement in the opposite direction (inverse response)
+  - Slower rise time and more complexity in control
+- Zeros near the origin tend to increase response speed, while those far from the origin may slow it down or distort it.
+
+**Why Zeros Matter**
+- Zeros influence how input signals are filtered by the system.
+- Essential for shaping the time-domain response, especially in controller design.
+- Help determine the location and nature of peaks in the frequency response (e.g., resonance).
 
 ## 4.1 Standard Test Signals
 Used to test and analyze system performance:
