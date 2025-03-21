@@ -27,7 +27,7 @@ It is difficult to model a system represented by differential equations --> So n
 
 The Laplace transform of a function \( f(t) \) is defined as:
 
-$$\mathcal{L}\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) \, dt$$
+$$\mathcal{L}\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) \.dt$$
 
 
 
