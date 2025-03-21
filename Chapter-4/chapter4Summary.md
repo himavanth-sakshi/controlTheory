@@ -17,7 +17,7 @@ Poles are fundamental in understanding how a system behaves over time. They dete
 
 A pole of a transfer function is:
 - A value of the Laplace variable s that makes the denominator of the transfer function zero, causing the function to go to infinity.
-if $$G(s) = /frac{N(s)}{D(s)}$$ , then poles are the roots of D(s) = 0
+if $$G(s) = \frac{N(s)}{D(s)}$$ , then poles are the roots of D(s) = 0
 - In practical control system analysis, poles also include common roots with the numerator (even if they cancel out), because they still influence the system behavior.
 
 **Interpretation of Poles**
@@ -37,7 +37,7 @@ Zeros play a key role in shaping how the input signal influences the output of a
 
 A zero of a transfer function is:
 - A value of the Laplace variable s that makes the numerator of the transfer function equal to zero, causing the overall transfer function output to be zero.
-- if $$G(s) = /frac{N(s)}{D(s)}$$ , then poles are the roots of D(s) = 0, then zeros are the roots of N(s)=0
+- if $$G(s) = \frac{N(s)}{D(s)}$$ , then poles are the roots of D(s) = 0, then zeros are the roots of N(s)=0
 - In practice, even if a zero cancels with a matching pole in the denominator, it's still often considered a zero, since it can still impact system behavior.
 
 **Impact of Zeros on System Response**
