@@ -8,6 +8,12 @@ Chapter 2 focuses on developing **mathematical models** for different physical s
 ## 2.1 Mathematical Modeling of Physical Systems
 A **mathematical model** represents a system’s behavior using **differential equations**, which can be converted into **transfer functions** or **state-space models** for analysis.
 
+**Two ways of developing mathematical models**
+1. Transfer functions in frequency domain
+2. state equations in time domain
+
+**NOTE** : necessary assumptions have to be made to create a mathematical model. 
+
 ### Why Model Systems?
 - Predict system behavior
 - Design and tune controllers
@@ -16,6 +22,12 @@ A **mathematical model** represents a system’s behavior using **differential e
 ---
 
 ## 2.2 Transfer Function
+
+It is difficult to model a system represented by differential equations --> So need for **Laplace transformation.**
+
+![The laplace transform is defined as](/Users/himavanth/Documents/controlTheory/pictureAssets/Screenshot 2025-03-21 at 13.10.24.png)
+
+
 The **transfer function** \( G(s) \) describes the system’s input-output relationship in the **Laplace domain**.
 
 \[ G(s) = \frac{\text{Output}}{\text{Input}} \]
