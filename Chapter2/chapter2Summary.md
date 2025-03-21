@@ -129,7 +129,7 @@ The variables in the electrical circuits (e.g., current, voltage) map directly t
 ### 2.9.1 Types of Analogs
 
 1. Series Analog (Impedance Approach):
-- Based on mesh (loop) equations in electric circuits.
+- Based on mesh (loop)(The sum of voltages around any closed loop (mesh) in a circuit is zero.) equations in electric circuits.
 - Mechanical elements correspond to electrical elements as follows:
 
 - Mass M → Inductor L
@@ -148,12 +148,13 @@ Electrical Series RLC Mesh Equation:
 $$(Ls + R + \frac{1}{Cs})I(s) = E(s)$$
 
 2. Parallel Analog (Admittance Approach)
-- Based on nodal equations in electric circuits.
+- Based on nodal equations(The sum of currents entering a node is equal to the sum of currents leaving that node) in electric circuits.
 - Components are matched using admittance (inverse of impedance).
 
 Electrical Parallel RLC Nodal Equation:
 
 $$((C_s + \frac{1}{s} + \frac{1}{L_s}) E(s) = I(s))$$ 
+
 This analogy allows us to represent mechanical systems as parallel electrical networks by mapping motion to node voltages and forces to currents.
 
 ## 2.10 NonLineraties 
@@ -165,9 +166,9 @@ The models developed so far assume linear, time-invariant differential equations
 
 ### 2.10.2 **Examples of Nonlinear Systems:**
 If an input x results in an output 0.5x , then:
-Input = 1 → Output = 0.5
-Input = 2 → Output = 1
-Input = 3 (sum of 1 & 2) → Output = 1.5 (sum of 0.5 & 1)
+- Input = 1 → Output = 0.5
+- Input = 2 → Output = 1
+- Input = 3 (sum of 1 & 2) → Output = 1.5 (sum of 0.5 & 1)
 
 ### 2.10.3 **Example of a Linear System:**
 - Saturation: Electronic amplifiers behave linearly only within a specific range.
