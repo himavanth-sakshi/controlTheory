@@ -1,7 +1,13 @@
 # Chapter 6: Stability
 
 ## Overview
-Chapter 5 introduces methods for reducing **complex block diagrams** and **signal flow graphs** into simplified forms. This is essential for analyzing and designing control systems effectively.
+Chapter 6 teaches you how to determine the stability of a control system — one of the most important system performance criteria.
+- Define and explain different types of stability
+- Use pole locations to predict system behavior
+- Construct and interpret Routh Tables
+- Analyze special cases in the Routh-Hurwitz method
+- Evaluate stability from state-space representations
+- Apply stability criteria in practical control system design
 
 ---
 
