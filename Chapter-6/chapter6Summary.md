@@ -49,7 +49,9 @@ It tells how many closed-loop poles lie in:(But not their exact coordinates)
 
 ![Routh-Hurwitz Stability Criterion Table](pictureAssets/pictureAssets/6.2RouthTable.png)
 
-### Method Overview:
+**The Routh-Hurwitz criterion declares that the number of roots of the polynomial that are in the right half-plane is equal to the number of sign changes in the first column.**
+
+
 - Construct a Routh Table from the characteristic polynomial.
 - Interpret the table to count the number of poles in each region of the s-plane.
 
@@ -60,66 +62,100 @@ While modern tools can compute pole locations directly, Routh-Hurwitz:
 - Helps determine stability range of an unknown parameter algebraically.
 - Avoids trial-and-error approaches.
 
+---
+
+## 6.3 Routh-Hurwitz Criterion: Special Cases
+Two special cases can occur:
+1. The Routh table sometimes will have a zero only in the first column of a row 
+2. the Routh table sometimes will have an entire row that consists of zeros. 
 
 
+### Zero only in 1st column: 
+- If the first element of a row is zero, computing the next row would cause division by zero.
+- To avoid this, we replace the zero with a small positive or negative number, called epsilon (ϵ).
+- After forming the rest of the table, we let ϵ approach zero and observe the signs in the first column.
+- This method helps continue the Routh table construction without mathematical errors and allows determining stability.
 
 
+### Entire row that consists of zeros: 
 
+**Quick Summary: Entire Row of Zeros in Routh Table**
+
+- Happens when the characteristic polynomial has a purely even or odd factor.
+- Indicates symmetric roots about the origin — may include imaginary-axis (jω) roots.
+- The row above the zero row contains this even/odd polynomial.
+
+
+**How to Analyze:**
+- Use the even polynomial from the row above to continue the table.
+- Count sign changes from its row to the bottom → tells right-half-plane (RHP) roots.
+- Due to symmetry, it has equal number of LHP and RHP roots; leftover roots lie on jω-axis.
+
+
+**Key Insight:**
+- A row of all zeros must be handled differently than just a single zero in a row.
+- It confirms the presence of imaginary-axis roots, which are critical for determining marginal stability.
 
 
 ---
 
-## 5.2 Block Diagram Reduction Rules
-To simplify complex diagrams:
-1. Combine series blocks.
-2. Combine parallel blocks.
-3. Move summing points and take-off points.
-4. Reduce inner feedback loops first.
-5. Work from inner to outer loops.
+## 6.4 Routh-Hurwitz Criterion: Additional Examples
 
-**Tip:** Redraw the diagram step-by-step to track simplifications.
+check the book for all examples 
+
 
 ---
 
-## 5.3 Signal Flow Graphs (SFGs)
-A **Signal Flow Graph (SFG)** is a graphical representation of a set of linear algebraic equations.
-- **Nodes:** Represent variables
-- **Branches:** Represent gains
+## 6.5 Stability in State Space
+
+
+### 6.5.1. State-Space vs. s-Plane Stability
+
+- Stability can be evaluated using the **system matrix \( A \)** in state-space form.
+- The **eigenvalues of \( A \)** are **equal to the poles** of the system's transfer function.
+
+
+### 6.5.2. Key Equation (Eigenvalue Calculation)
+
+Eigenvalues \( \lambda \) are found by solving:
+
+\[\det(\lambda I - A) = 0\]
+
+This is the **characteristic equation**, and it is the same equation used to find poles.
+
+
+### 6.5.3. Relation to Transfer Function
+
+The system transfer function is:
+
+\[G(s) = C(sI - A)^{-1}B + D\]
+
+Its denominator includes \( \det(sI - A) \), so solving:
+
+\[\det(sI - A) = 0\]
+
+yields the system's **poles** (which are also the eigenvalues of \( A \)).
+
+
+
+### 6.5.4. Why This Is Useful
+
+- Stability can be determined **directly from the state-space equations**.
+- If \( \det(sI - A) \) is a high-degree polynomial, use the **Routh-Hurwitz criterion** to find how many eigenvalues are in each s-plane region.
 
 ---
 
-## 5.4 Mason's Gain Formula
-Used to calculate the overall transfer function from a signal flow graph.
+### 6.5.5. Stability Conditions (State-Space View)
 
-\[ T = \frac{\sum_{k=1}^{N} P_k \Delta_k}{\Delta} \]
-
-Where:
-- \( P_k \): Gain of the k-th forward path
-- \( \Delta \): Determinant of the graph (1 - sum of individual loop gains + sum of gain products of non-touching loops - ...)
-- \( \Delta_k \): Value of \( \Delta \) with loops touching \( P_k \) removed
+A system is **stable** if:
+- All eigenvalues of \( A \) lie in the **left-half of the s-plane**.
+- There are **no repeated eigenvalues on the imaginary axis (jω)**.
 
 ---
 
-## 5.5 Example: Feedback System Reduction
-Given:
-\[ G(s) = \frac{10}{s+5}, \quad H(s) = \frac{1}{s+2} \]
+### 6.5.6. Final Conclusion
 
-Feedback connection:
-\[ T(s) = \frac{G(s)}{1 + G(s)H(s)} = \frac{10}{(s+5) + \frac{10}{s+2}} \]
+- The **eigenvalues of \( A \)** determine system stability.
+- This provides a **direct and efficient method** to assess feedback system stability without converting to a transfer function.
 
 ---
-
-## Key Takeaways
-- Use block diagram algebra to simplify complex systems step-by-step.
-- Mason’s Gain Formula offers a powerful method for signal flow analysis.
-- Always reduce **inner loops** before outer loops.
-
----
-
-## Next Steps
-- Practice reducing diagrams with multiple loops.
-- Learn to convert between block diagrams and signal flow graphs.
-- Use Python/MATLAB to simulate and validate results.
-
----
-
