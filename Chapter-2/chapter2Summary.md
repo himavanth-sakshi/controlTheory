@@ -25,7 +25,10 @@ A **mathematical model** represents a system’s behavior using **differential e
 
 It is difficult to model a system represented by differential equations --> So need for **Laplace transformation.**
 
-![The Laplace transform is defined as]("pictureAssets/Screenshot 2025-03-21 at 13.10.24.png")
+The Laplace transform of a function \( f(t) \) is defined as:
+
+$$\mathcal{L}\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) \.dt$$
+
 
 
 
@@ -112,6 +115,110 @@ Example for a **mass-spring-damper** system:
 \[ A = \begin{bmatrix} 0 & 1 \\ -\frac{K}{M} & -\frac{B}{M} \end{bmatrix}, \quad B = \begin{bmatrix} 0 \\ \frac{1}{M} \end{bmatrix}, \quad C = \begin{bmatrix} 1 & 0 \end{bmatrix}, \quad D = 0 \]
 
 ---
+## 2.9 Electric Circuit Analogs
+This section explains how mechanical systems can be represented by equivalent electrical circuits, highlighting the deep mathematical similarity between them. This approach helps simplify problem-solving by converting mechanical motion problems into electrical network problems.
+
+**Electrical Circuit Analog:**
+An electric circuit analog is an electrical network whose equations behave like those of a mechanical system.
+This is based on the mathematical similarity between Kirchhoff's laws (for electrical systems) and Newton's laws (for mechanical systems).
+
+**Why Use Analogs?**
+Translating mechanical problems into electric circuit equivalents can simplify modeling and analysis.
+The variables in the electrical circuits (e.g., current, voltage) map directly to mechanical variables (e.g., velocity, force).
+
+### 2.9.1 Types of Analogs
+
+1. Series Analog (Impedance Approach):
+- Based on mesh (loop)(The sum of voltages around any closed loop (mesh) in a circuit is zero.) equations in electric circuits.
+- Mechanical elements correspond to electrical elements as follows:
+
+- Mass M → Inductor L
+- Damping f_v → Resistor R
+- Spring K → Capacitor C
+
+Mechanical equation of motion
+$$(Ms^2 + f_v s + K)X(s) = F(s)$$
+
+After converting displacement X(s) to velocity V(s):
+
+$$(Ms + f_v + \frac{K}{s})V(s) = F(s)$$
+
+Electrical Series RLC Mesh Equation:
+
+$$(Ls + R + \frac{1}{Cs})I(s) = E(s)$$
+
+2. Parallel Analog (Admittance Approach)
+- Based on nodal equations(The sum of currents entering a node is equal to the sum of currents leaving that node) in electric circuits.
+- Components are matched using admittance (inverse of impedance).
+
+Electrical Parallel RLC Nodal Equation:
+
+$$((C_s + \frac{1}{s} + \frac{1}{L_s}) E(s) = I(s))$$ 
+
+This analogy allows us to represent mechanical systems as parallel electrical networks by mapping motion to node voltages and forces to currents.
+
+## 2.10 NonLineraties 
+The models developed so far assume linear, time-invariant differential equations, but many real-world systems are nonlinear. 
+
+### 2.10.1 **Definition of Linearity:** A system is linear if it satisfies:
+- Superposition: The response to multiple inputs is the sum of individual responses.
+- Homogeneity: Scaling an input scales the output by the same factor.
+
+### 2.10.2 **Examples of Nonlinear Systems:**
+If an input x results in an output 0.5x , then:
+- Input = 1 → Output = 0.5
+- Input = 2 → Output = 1
+- Input = 3 (sum of 1 & 2) → Output = 1.5 (sum of 0.5 & 1)
+
+### 2.10.3 **Example of a Linear System:**
+- Saturation: Electronic amplifiers behave linearly only within a specific range.
+- Dead Zone: Motors may not respond at low voltages due to friction.
+- Backlash: Gears may have loose movement, causing an input delay.
+- Phase Detector: Output is the sine of the input, making it inherently nonlinear.
+
+### 2.10.4 **Linear Approximations of Nonlinear Systems:**
+- Nonlinear systems can often be approximated as linear for analysis.
+- If input variations are small, a linear relationship can be assumed around a specific point.
+- Example: Electronic amplifiers are approximately linear for small input changes.
+---
+## 2.11 Linearization
+
+### 2.11.1 **Why Linearization is Needed?**
+Many electrical and mechanical systems contain nonlinear components.
+Transfer functions only apply to linear systems, so we must linearize nonlinear systems first.
+
+### 2.11.2 Linearization Process:
+Step 1: Identify the nonlinear component and write the nonlinear differential equation.
+Step 2: Determine the steady-state equilibrium point where small-signal input = 0.
+Step 3: Use Taylor Series Expansion to approximate the nonlinear function.
+Step 4: Neglect higher-order terms to get a linear equation.
+Step 5: Take the Laplace transform, assuming zero initial conditions.
+Step 6: Express the system as a transfer function.
+
+### 2.11.3 Mathematical Linearization (Using Taylor Series Approximation):
+- the functionf(x) around point x_0 is approximated as:
+$$f(x) \approx f(x_0) + \frac{df}{dx} \Big|_{x = x_0} (x - x_0)$$
+
+- $$ \text{Higher-order terms } \left( \frac{d^2f}{dx^2}, \frac{d^3f}{dx^3}, \ldots \right) \text{ are ignored for small variations.} $$
+
+### 2.11.4 Example of Linearization of pendulum equation
+
+The equation of motion for a pendulum is:
+
+$$M L^2 \ddot{\theta} + B \dot{\theta} + M g L \sin{\theta} = 0$$
+
+For small angles (\( \theta \approx 0 \)), we approximate:
+
+$$\sin{\theta} \approx \theta$$
+
+The linearized equation becomes:
+
+$$M L^2 \ddot{\theta} + B \dot{\theta} + M g L \theta = 0$$
+
+This is now a linear system that can be analyzed using transfer functions.
+
+
+
 
 ## Key Takeaways
 - **Mathematical modeling** helps analyze system behavior.
