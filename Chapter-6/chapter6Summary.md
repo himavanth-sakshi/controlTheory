@@ -47,7 +47,7 @@ It tells how many closed-loop poles lie in:(But not their exact coordinates)
 - The right-half plane (RHP)
 - On the imaginary axis
 
-![Routh-Hurwitz Stability Criterion Table](pictureAssets/6.2RouthTable.png)
+![Routh-Hurwitz Stability Criterion Table](pictureAssets/pictureAssets/6.2RouthTable.png)
 
 ### Method Overview:
 - Construct a Routh Table from the characteristic polynomial.
